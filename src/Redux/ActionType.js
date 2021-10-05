@@ -1,0 +1,9 @@
+
+export const ActionType = {
+    GET_ALL_BLOGS : "GET_ALL_BLOGS",
+    GET_ONE_BLOG : "GET_ONE_BLOG",
+    GET_FILTER_BLOG : "GET_FILTER_BLOG",
+    GET_ALL_BLOG : "GET_ALL_BLOG",
+    REFRESH : "REFRESH"
+}
+
