@@ -1,0 +1,114 @@
+.brand {
+    color: #FFC75F;
+    font-weight: bolder;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.form {
+    display: flex;
+    height: 40px;
+    border-radius: 2px;
+    padding: 0 0 0 2px;
+    min-width: 18% !important;
+    border: 1px solid #FFC75F;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.form input {
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    font-weight: 500;
+    background: none;
+    border: none;
+
+}
+
+.form button {
+    height: 100%;
+    padding: 0 10px;
+    background: #FFC75F;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.form button .Search {
+    background: none;
+}
+
+.form button:hover {
+    color: red;
+}
+
+.btn-SIGNUP {
+    background: black;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 2px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-SIGNIN {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 2px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-btn div .btn_{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 6px;
+    border-radius: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-btn div {
+    font-weight: 600;
+}
+
+@media(max-width:1200px) {
+    .brand {
+        display: none;
+    }
+
+    .btn-SIGNIN {
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 5px;
+        border-radius: 2px;
+        font-weight: 500;
+    }
+
+    .btn-SIGNUP {
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 6px;
+        border-radius: 2px;
+        font-weight: 500;
+    }
+
+    .nav-btn div button{
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 6px;
+        border-radius: 2px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}

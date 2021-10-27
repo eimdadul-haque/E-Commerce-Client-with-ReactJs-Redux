@@ -1,0 +1,12 @@
+.cardList{
+
+}
+
+.cold{
+    height: 400px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}

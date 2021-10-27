@@ -1,16 +1,21 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk"
-
-import { getFilterBlog, getOneBlog, getAllBlog} from "../Reducers/BlogReducer";
-import { RefreshReducer } from "../Reducers/RefreshReducer";
+import { Product, Cart, Refresh, Type } from "../Reducers/homeReducer";
+import { createStore, combineReducers, compose, applyMiddleware } from "redux";
+import thank from "redux-thunk";
 
 const mainReducer = combineReducers({
-    FilterBlogStore: getFilterBlog,
-    RefreshStore: RefreshReducer,
-    getOneBlogStore :getOneBlog,
-    getAllBlogStore: getAllBlog
+    ProductStore: Product,
+    CartStore: Cart,
+    RefreshStore: Refresh,
+    TypeStore: Type
 })
 
-const composeEnhancher = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const localstore = localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : [];
 
-export const Store = createStore(mainReducer, composeEnhancher(applyMiddleware(thunk)));
+const INITIAL_STAGE = {
+    CartStore: {
+        carts: localstore
+    }
+}
+
+const composeEnhanchers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export const Store = createStore(mainReducer, INITIAL_STAGE, composeEnhanchers(applyMiddleware(thank)))

@@ -1,0 +1,16 @@
+.Clear {
+    background: #f5563a;
+    border: none;
+    padding: 5px;
+    margin-right: 7px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.Order {
+    background:#845EC2;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: 600;
+}
