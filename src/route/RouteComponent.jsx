@@ -12,6 +12,8 @@ import Login from '../pages/Account/Login/Login';
 import SignUp from '../pages/Account/SignUp/SignUp';
 import ProtectedRoute from '../auth/ProtectedRoute';
 import AddProduct from '../pages/AddPrduct/AddProduct';
+import ProductByType from '../pages/ProductByType/ProductByType';
+import Dashboard from '../pages/Deahboard/Dashboard';
 export default function RouteComponent() {
     return (
         <>
@@ -35,6 +37,12 @@ export default function RouteComponent() {
                     </Route>
                     <Route path="/product-details/:id" exact>
                         <ProductDetails />
+                    </Route>
+                    <Route path="/get-by-category/:cat_id" exact>
+                        <ProductByType />
+                    </Route>
+                    <Route path="/deshboard" exact>
+                        <Dashboard />
                     </Route>
                     <Route path="/login" exact>
                         <Login />

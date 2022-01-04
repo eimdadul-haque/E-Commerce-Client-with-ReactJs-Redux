@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { Cart, Refreash } from "../../../Redux/Actions/homeAction";
+import { Cart, InitalCart, Refreash } from "../../../Redux/Actions/homeAction";
 import "./Login.css";
 
 const loginInfo = {
@@ -30,6 +30,7 @@ export default function Login() {
                 localStorage.setItem("token", res.data.token)
                 localStorage.setItem("fname", res.data.fname)
                 localStorage.setItem("lname", res.data.lname)
+                dispatch(InitalCart(localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : []))
                 dispatch(Refreash());
                 history.push("/cart");
             })

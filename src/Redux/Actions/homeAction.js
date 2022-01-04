@@ -29,25 +29,45 @@ export const GetOneProduct = (id) => async (dispatch, store) => {
 
 // Cart 
 export const Cart = (data, qty) => async (dispatch, store) => {
-        dispatch({
-            type: ActionType.ADD_TO_CART,
-            payload: {
-                id: data.id,
-                productName: data.productName,
-                productPrice: data.productPrice,
-                imageName: data.imageName,
-                qty: qty
-            }
-        })
+    dispatch({
+        type: ActionType.ADD_TO_CART,
+        payload: {
+            id: data.id,
+            productName: data.productName,
+            productPrice: data.productPrice,
+            imageName: data.imageName,
+            qty: qty
+        }
+    })
     localStorage.setItem(localStorage.getItem("fname") + "_cart", JSON.stringify(store().CartStore.carts))
 }
 
-export const removeCart = () => {
+//Remove from cart
+export const removeCart = (id) => async (dispatch, store) => {
+    dispatch({
+        type: ActionType.REMOVE_TO_CART,
+        payload: id
+    })
+    localStorage.setItem(localStorage.getItem("fname") + "_cart", JSON.stringify(store().CartStore.carts))
+}
 
+//Remove all from cart
+export const removeallCart = () => async (dispatch, store) => {
+    dispatch({
+        type: ActionType.REMOVE_ALL_CART,
+        payload: ""
+    })
+}
+
+//Inital cart
+export const InitalCart = (data) => async (dispatch, store) => {
+    dispatch({
+        type: ActionType.INITIAL_CART,
+        payload: data
+    })
 }
 
 //Order
-
 export const Order = (data, products) => async (dispatch, store) => {
     var res = await axios.post(process.env.REACT_APP_ORDER, {
         name: data.name,
@@ -57,7 +77,7 @@ export const Order = (data, products) => async (dispatch, store) => {
         products: products,
     }, {
         headers: {
-            authorization: "bearer " + sessionStorage.getItem('token')
+            authorization: "bearer " + localStorage.getItem('token')
         }
     });
 }

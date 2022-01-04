@@ -7,7 +7,7 @@ import "./Navber.css";
 import Search from "@material-ui/icons/Search";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import { Badge } from '@material-ui/core';
-import { Cart, Refreash, Type } from '../../Redux/Actions/homeAction';
+import { Cart, Refreash, removeallCart, Type } from '../../Redux/Actions/homeAction';
 import { ActionType } from '../../Redux/ActionType';
 
 export default function Navber() {
@@ -47,9 +47,15 @@ export default function Navber() {
             localStorage.setItem("token", "");
             localStorage.setItem("fname", "");
             localStorage.setItem("lname", "");
+            dispatch(removeallCart())
             dispatch(Refreash());
         }
 
+    }
+
+    const getProbyType = (id) => {
+        history.push("/get-by-category/" + id)
+        dispatch(Refreash());
     }
 
     return (
@@ -87,7 +93,7 @@ export default function Navber() {
                             <NavDropdown title={"CATEGORIES"}>
                                 {
                                     types.map((data, index) =>
-                                        <NavDropdown.Item >
+                                        <NavDropdown.Item key={index} onClick={() => getProbyType(data.id)} >
                                             {data.type}
                                         </NavDropdown.Item>
                                     )

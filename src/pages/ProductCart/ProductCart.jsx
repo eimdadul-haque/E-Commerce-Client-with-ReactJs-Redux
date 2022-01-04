@@ -5,7 +5,7 @@ import Add from "@material-ui/icons/Add";
 import Remove from "@material-ui/icons/Remove";
 import IMg from "../../asset/2.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { Cart } from '../../Redux/Actions/homeAction';
+import { Cart, removeCart } from '../../Redux/Actions/homeAction';
 import { Link } from "react-router-dom";
 export default function ProductCart() {
 
@@ -22,11 +22,14 @@ export default function ProductCart() {
         }
     }
 
+    const removeitem = (id) => {
+        dispatch(removeCart(id))
+    }
+
     if (carts.length === 0) {
         return (
             <div className="position-relative" style={{ height: "100vh", width: "100%" }}>
                 <p className="empty">Your cart is empty, Back to<Link to="/"> home</Link></p>
-
             </div>
         )
     }
@@ -51,12 +54,12 @@ export default function ProductCart() {
                                     <tr key={index} >
                                         <td>
                                             <div className='cart-info'>
-                                                <img src={"http://localhost:62266/Images/"+data.imageName} />
+                                                <img src={"http://localhost:62266/Images/" + data.imageName} />
                                                 <div>
                                                     <p style={{ margin: '0px' }}>{data.productName}</p>
                                                     <small>${data.productPrice}</small>
                                                     <br />
-                                                    <p href="#">Remove</p>
+                                                    <a onClick={() => removeitem(data.id)}>Remove</a>
                                                 </div>
                                             </div>
                                         </td>
