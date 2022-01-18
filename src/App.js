@@ -1,12 +1,15 @@
 import './App.css';
 import React from 'react';
-import RouteComponent from './route/RouteComponent';
-import "bootstrap/dist/css/bootstrap.min.css"
+import Navbar from './components/navbar/Navbar';
+import Announcement from './components/announcement/Announcement';
+import Slider from './components/slider/Slider';
 
 function App() {
   return (
     <>
-      <RouteComponent />
+      <Announcement />
+      <Navbar />
+      <Slider />
     </>
   );
 }
