@@ -15,7 +15,7 @@ export default function Navbar() {
                         </div>
                     </div>
                     <div className='nav-part-mid'>
-                        <h1 className='logo'>Eimdadul</h1>
+                        <h2 className='logo'>OnlineShop</h2>
                     </div>
                     <div className='nav-part-end'>
                         <div className='menu-item'>

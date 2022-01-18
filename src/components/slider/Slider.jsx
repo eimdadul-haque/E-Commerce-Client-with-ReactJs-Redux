@@ -3,41 +3,34 @@ import axios from 'axios';
 import { Carousel } from "react-bootstrap";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "./Slider.css";
+import { sliderItems } from "../../data/data";
 
 export default function Slider() {
-    const [data, setdata] = useState([])
-
-    useEffect(() => {
-        axios.get("http://kmemon.pythonanywhere.com/api/homepage/sliders/")
-            .then((res) => {
-                setdata(res.data);
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err, "===Error");
-            })
-    }, [])
 
     return (
         <div className='slider-container' >
             <Carousel >
-                {
-                    data.map((data, index) => {
-                        return (
-                            <Carousel.Item key={index} interval={3000}>
-                                <img
-                                    className="d-block w-100 slider-img "
-                                    src={data.image}
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>{data.title}</h3>
-                                    <p>{data.text}</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        )
-                    })
-                }
+                    <Carousel.Item  interval={3000} className='slider-container' >
+                        <img
+                            className="slider-img "
+                            src="https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item  interval={3000} className='slider-container' style={{backgroundColor:"https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}} >
+                        <img
+                            className="slider-img "
+                            src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item  interval={3000} className='slider-container' >
+                        <img
+                            className="slider-img "
+                            src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?cs=srgb&dl=pexels-juan-mendez-1536619.jpg&fm=jpg"
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
             </Carousel >
         </div>
     )
