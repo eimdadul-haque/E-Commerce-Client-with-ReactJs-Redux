@@ -1,0 +1,45 @@
+
+.cate-container{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.cate-item{
+    flex: 1;
+    margin: 3px;
+    height: 70vh;
+    position: relative;
+}
+
+.cate-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cate-info{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cate-title{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cate-btn{
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    font-weight: 600;
+}
