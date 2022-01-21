@@ -1,4 +1,3 @@
-import { categories } from "../../data/data";
 import React from 'react';
 import "./CategorieItems.css";
 

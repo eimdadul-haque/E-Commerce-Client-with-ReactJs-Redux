@@ -6,6 +6,7 @@ import Slider from './components/slider/Slider';
 import Categorie from './components/categorie/Categorie';
 import Products from './components/product/Products';
 import Newsletter from './components/newsletter/Newsletter';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Categorie />
       <Products />
       <Newsletter />
+      <Footer />
     </>
   );
 }

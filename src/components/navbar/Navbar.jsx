@@ -11,7 +11,7 @@ export default function Navbar() {
                         <span className='language'>Navber</span>
                         <div className='search-container'>
                             <input className='input' />
-                            <Search style={{ color: "gray", fontSize: '16px' }} />
+                            <Search className='search-icon' style={{ color: "gray", fontSize: '16px' }} />
                         </div>
                     </div>
                     <div className='nav-part-mid'>

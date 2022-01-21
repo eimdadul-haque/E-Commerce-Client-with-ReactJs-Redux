@@ -1,14 +1,14 @@
 .news-container {
-    height: 60 hv;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-items: center;
     flex-direction: column;
-    background-color: #fcf5f5;
+    background-color: #ffffff;
 }
 
 .news-title {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
@@ -32,14 +32,17 @@
     padding-left: 20px;
     flex: 8;
     border: none;
+    color: #fcf5f5;
 }
 
 .news-btn {
     border: none;
     height: 100%;
-    background-color: aquamarine;
+    background-color: rgb(102, 67, 228);
     flex: 1;
     color: #ffffff;
+
+    
 }
 
 
