@@ -1,4 +1,4 @@
-import { Facebook, Instagram, LocationCity, Mail, Map, Phone, Pinterest, YouTube } from "@material-ui/icons";
+import { Facebook, Instagram, Mail, Map, Phone, Pinterest, YouTube } from "@material-ui/icons";
 import React from "react";
 import "./Footer.css"
 export default function Footer() {
