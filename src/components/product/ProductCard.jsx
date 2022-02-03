@@ -1,6 +1,6 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
-import "./Product.css"
+import "./ProductCard.css"
 
 export default function ProductCard({item}) {
     return (

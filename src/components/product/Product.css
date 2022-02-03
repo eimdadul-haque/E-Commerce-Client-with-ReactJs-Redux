@@ -1,60 +1,89 @@
-.products-container {
-    padding: 20px;
+.pro-page-warpper {
+    padding: 50px;
     display: flex;
-    flex-wrap: wrap;
 }
 
-.product-container {
+.pro-page-image-container {
     flex: 1;
-    margin: 5px;
-    min-width: 280px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5fbfd;
-    position: relative;
 }
 
-.product-image {
-    height: 70%;
+.one-pro-info {
+    flex: 1;
+    padding: 0 50px;
+}
+
+.pro-page-image {
     width: 100%;
+    height: 90vh;
     object-fit: cover;
 }
 
-.product-info {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, .2);
-    z-index: 3;
+.pro-info-desc {
+    margin: 20px 0;
+}
+
+.pro-info-titile {
+    font-weight: 200;
+}
+
+.pro-info-price {
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.pro-filter-container {
+    width: 50%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pro-filter{
     display: flex;
     align-items: center;
+}
+
+.pro-color-title {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.pro-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.pro-select{
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.pro-amount-container{
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+}
+
+.pro-amount{
+    border: solid 1px rgb(36, 154, 170);
+    height: 30px;
+    width: 30px;
+    display: flex;
     justify-content: center;
-    transition: all .5s ease;
+    align-items: center;
+    margin: 0px 5px;    
+    border-radius: 10px;
+}
+.pro-button{
+    border: solid 2px teal;
+    background-color: white;
+    padding: 15px;
     cursor: pointer;
 }
 
-.product-info:hover{
-    opacity: 1;
-}
-
-.product-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-    transition: all 0.5s ease;
-}
-
-.product-icon:hover {
-    background-color: #e9f5f5;
-    transform: scale(1.1);
+.pro-button:hover{
+    background-color: #f8f4f4;
 }
