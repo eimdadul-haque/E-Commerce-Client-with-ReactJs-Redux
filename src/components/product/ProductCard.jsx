@@ -2,7 +2,7 @@ import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@m
 import React from 'react';
 import "./Product.css"
 
-export default function Product({item}) {
+export default function ProductCard({item}) {
     return (
         <div className='product-container'>
             <div className=''>

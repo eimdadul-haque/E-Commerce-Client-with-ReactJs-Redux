@@ -1,9 +1,9 @@
 import React from 'react';
-import Announcement from "../../components/announcement/Announcement";
-import Navbar from '../../components/navbar/Navbar';
-import Products from "../../components/product/Products";
-import Newsletter from "../../components/newsletter/Newsletter";
-import Footer from '../../components/footer/Footer';
+import Announcement from "../announcement/Announcement";
+import Navbar from '../navbar/Navbar';
+import ProductCards from "./ProductCards";
+import Newsletter from "../newsletter/Newsletter";
+import Footer from '../footer/Footer';
 import "./ProductList.css"
 
 export default function ProductList() {
@@ -38,7 +38,7 @@ export default function ProductList() {
                 </select>
             </div>
         </div>
-        <Products />
+        <ProductCards />
         <Newsletter />
         <Footer />
     </>;
