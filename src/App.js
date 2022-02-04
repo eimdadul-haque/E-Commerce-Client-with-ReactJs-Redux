@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import Product from './components/product/Product';
+import Login from './pages/login/Login';
 function App() {
   return (
     <>
-      <Product />
+      <Login />
     </>
   );
 }

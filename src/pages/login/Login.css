@@ -1,0 +1,51 @@
+.log-container {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgb(255, 255, 255,.3),rgba(255,255,255,.1)), url('https://c.wallhere.com/photos/19/89/1920x1080_px_field_landscape-702425.jpg!d');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-warpper {
+    width: 25%;
+    padding: 20px;
+    background: white;
+}
+
+.log-title {
+    font-size: 24px;
+    font-weight: 300;
+}
+.log-from {
+    display: flex;
+    flex-direction: column;
+}
+
+.log-input {
+    flex: 1;
+    min-width: 40%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+
+.log-button {
+    width: 40%;
+    border: none;
+    padding: 12px 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: teal;
+    margin-bottom: 10px;
+}
+
+.log-link{
+    text-decoration: underline;
+    font-size: 12px;
+    margin: 5px 0;
+    cursor: pointer;
+}
