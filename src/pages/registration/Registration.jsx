@@ -1,10 +1,12 @@
 import React from 'react';
+import Navbar from '../../components/navbar/Navbar';
 import "./Registration.css";
 
 export default function Registration() {
     return (
-        <>
+        <>                <Navbar />
             <div className='reg-container'>
+
                 <div className='reg-warpper'>
                     <h1 className='pro-title'>Create an Account</h1>
                     <form className='reg-from'>

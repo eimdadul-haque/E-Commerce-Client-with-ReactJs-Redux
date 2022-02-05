@@ -1,10 +1,9 @@
 import './App.css';
-import React from 'react';
-import Cart from './pages/cart/Cart';
+import RouteComponent from './route/RouteComponent';
 function App() {
   return (
     <>
-      <Cart />
+      <RouteComponent />
     </>
   );
 }
