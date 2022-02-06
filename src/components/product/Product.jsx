@@ -1,26 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Product.css";
 import Newsletter from "../newsletter/Newsletter";
 import Footer from "../footer/Footer";
 import Navber from "../navbar/Navbar";
 import Announcement from "../announcement/Announcement";
 import { Add, Remove } from '@material-ui/icons';
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 export default function Product() {
+
+    const [data, setData] = useState({});
+    const param = useParams();
+    useEffect(() => {
+        axios.get("http://localhost:7901/api/Home/" + param.id)
+            .then((res) => {
+                setData(res.data);
+                console.log(res.data,"res.data");
+            })
+            .catch(err => console.log(err))
+    }, [])
+
     return (
         <div className='pro-page-container'>
             <Announcement />
             <Navber />
             <div className='pro-page-warpper'>
                 <div className='pro-page-image-container'>
-                    <img className='pro-page-image' src='https://img.pixelz.com/blog/using-product-images-on-ecommerce-site/ecommerce-product-images-laptop.jpg?w=1000' />
+                    <img className='pro-page-image' src={'http://localhost:7901/Images/' +data.imageName} />
                 </div>
                 <div className='one-pro-info'>
-                    <h1 className='pro-info-titile'>Laptop</h1>
-                    <p className='pro-info-desc'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium eum rerum labore sint ad consequuntur iste provident cupiditate minima quae.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis repellendus officia provident sequi nesciunt beatae repudiandae doloremque suscipit, ducimus blanditiis.
-                    </p>
-                    <span className='pro-info-price'>$ 20</span>
+                    <h1 className='pro-info-titile'>{data.name}</h1>
+                    <p className='pro-info-desc'> {data.description} </p>
+                    <span className='pro-info-price'>$ {data.price}</span>
                     <div className='pro-filter-container'>
                         <div className='pro-filter'>
                             <span className='pro-color-title'>Color</span>
