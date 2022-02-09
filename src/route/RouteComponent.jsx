@@ -27,7 +27,7 @@ export default function RouteComponent() {
                     <Route path="/product/:id" exact>
                         <Product />
                     </Route>
-                    <Route path="/product-list" exact>
+                    <Route path="/product-list/:category" exact>
                         <ProductList />
                     </Route>
                 </Switch>

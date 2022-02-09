@@ -5,12 +5,15 @@ import ProductCards from "./ProductCards";
 import Newsletter from "../newsletter/Newsletter";
 import Footer from '../footer/Footer';
 import "./ProductList.css"
+import { useParams } from 'react-router-dom';
 
 export default function ProductList() {
+
+    const param = useParams();
     return <>
         <Announcement />
         <Navbar />
-        <h1 className='main-filter-title'>Dresses</h1>
+        <h1 className='main-filter-title'>{param.category}</h1>
         <div className='filter-container'>
             <div>
                 <span className='filter-title'>Filter product by:</span>
@@ -38,7 +41,7 @@ export default function ProductList() {
                 </select>
             </div>
         </div>
-        <ProductCards />
+        <ProductCards cate={param.category}/>
         <Newsletter />
         <Footer />
     </>;

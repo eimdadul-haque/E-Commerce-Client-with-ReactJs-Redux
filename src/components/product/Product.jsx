@@ -7,19 +7,39 @@ import Announcement from "../announcement/Announcement";
 import { Add, Remove } from '@material-ui/icons';
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Cart } from '../../Redux/Actions/cartAction';
 
 export default function Product() {
 
+    const { ref } = useSelector(state => state.RefreshStore)
     const [data, setData] = useState({});
+    const [qty, setQty] = useState(1);
+    const dispatch = useDispatch();
     const param = useParams();
+
     useEffect(() => {
         axios.get("http://localhost:7901/api/Home/" + param.id)
             .then((res) => {
                 setData(res.data);
-                console.log(res.data,"res.data");
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [ref])
+
+    const product_qty = (value) => {
+        if (value === "desc") {
+            qty > 1 && setQty(qty - 1);
+        }
+        else {
+
+            setQty(qty + 1);
+        }
+
+    }
+
+    const add_cart = (product, qty) => {
+        dispatch(Cart(product, qty));
+    }
 
     return (
         <div className='pro-page-container'>
@@ -27,7 +47,7 @@ export default function Product() {
             <Navber />
             <div className='pro-page-warpper'>
                 <div className='pro-page-image-container'>
-                    <img className='pro-page-image' src={'http://localhost:7901/Images/' +data.imageName} />
+                    <img className='pro-page-image' src={'http://localhost:7901/Images/' + data.imageName} />
                 </div>
                 <div className='one-pro-info'>
                     <h1 className='pro-info-titile'>{data.name}</h1>
@@ -51,11 +71,11 @@ export default function Product() {
                     </div>
                     <div className='pro-filter-container'>
                         <div className='pro-amount-container'>
-                            <Remove />
-                            <span className='pro-amount'>1</span>
-                            <Add />
+                            <Remove onClick={() => product_qty("desc")} />
+                            <span className='pro-amount'>{qty}</span>
+                            <Add onClick={() => product_qty("Add")} />
                         </div>
-                        <button className='pro-button'>
+                        <button onClick={() => add_cart(data, qty)} className='pro-button'>
                             Add To Cart
                         </button>
                     </div>

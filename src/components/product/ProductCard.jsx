@@ -7,7 +7,7 @@ export default function ProductCard({ item }) {
 
     const history = useHistory();
     const get_a_product = (id) => {
-     history.push("product/"+id);   
+     history.push("/product/"+id);   
     }
 
     return (

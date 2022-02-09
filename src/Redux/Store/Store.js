@@ -1,19 +1,17 @@
-import { Product, Cart, Refresh, Type } from "../Reducers/homeReducer";
+import { Product, Cart, Refresh, Type } from "../Reducers/cartReducer";
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thank from "redux-thunk";
 
 const mainReducer = combineReducers({
-    ProductStore: Product,
     CartStore: Cart,
-    RefreshStore: Refresh,
-    TypeStore: Type
+    RefreshStore: Refresh
 })
 
-const localstore = localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : [];
+//const localstore = localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : [];
 
 const INITIAL_STAGE = {
     CartStore: {
-        carts: localstore
+        carts: []
     }
 }
 
