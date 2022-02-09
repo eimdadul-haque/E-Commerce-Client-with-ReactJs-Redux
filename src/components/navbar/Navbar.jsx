@@ -2,11 +2,13 @@ import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
     const { carts } = useSelector(state => state.CartStore);
     const [qty, setQty] = useState(0);
+    const history = useHistory();
 
     useEffect(() => {
         var c = 0;
@@ -16,6 +18,9 @@ export default function Navbar() {
         setQty(c);
     }, [carts]);
 
+    const to_cart = () => {
+        history.push('/cart/');
+    }
     return (
         <div className='container-nav'>
             <div className='wrapper'>
@@ -30,19 +35,19 @@ export default function Navbar() {
                     <h2 className='logo'>OnlineShop</h2>
                 </div>
                 <div className='nav-part-end'>
-                    <div className='menu-item'>
+                    <div onClick={() => to_cart()} className='menu-item'>
                         <Badge badgeContent={qty} color="primary">
                             <ShoppingCartOutlined />
                         </Badge>
                     </div>
                     <div className='menu-item'>
-                        Register
+                        Register                          
                     </div>
                     <div className='menu-item'>
                         Sign Up
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

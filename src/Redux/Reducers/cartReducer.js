@@ -23,6 +23,11 @@ export const Cart = (state = INITIAL_STATE_CART, action) => {
                     carts: [...state.carts, item]
                 }
             }
+        case ActionType.REMOVE_TO_CART:
+            return {
+                ...state,
+                carts: state.carts.filter((x) => x.id !== action.payload.id)
+            }
         default:
             return state;
     }

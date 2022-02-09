@@ -111,3 +111,12 @@
     color: white;
     font-weight: 600;
 }
+
+
+.remove-btn{
+    padding: 5px;
+    margin-right: 10px;
+    background-color: rgb(194, 47, 47);
+    border: none;
+    color: white;
+}

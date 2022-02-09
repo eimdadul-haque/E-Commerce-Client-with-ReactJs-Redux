@@ -1,4 +1,3 @@
-import axios from "axios";
 import { ActionType } from "../ActionType";
 
 
@@ -7,14 +6,21 @@ export const Cart = (data, qty) => async (dispatch, store) => {
     dispatch({
         type: ActionType.ADD_TO_CART,
         payload: {
-            id: data.id,
-            productName: data.name,
-            productPrice: data.price,
-            imageName: data.imageName,
-            qty: qty
+            ...data,
+            qty
         }
     })
-    localStorage.setItem(localStorage.getItem("fname") + "_cart", JSON.stringify(store().CartStore.carts))
+        localStorage.setItem(localStorage.getItem("fname") + "_cart", JSON.stringify(store().CartStore.carts))
+}
+
+export const removeCart = (data) => async (dispatch, store) => {
+    dispatch({
+        type: ActionType.REMOVE_TO_CART,
+        payload: {
+            ...data
+        }
+    })
+        localStorage.setItem(localStorage.getItem("fname") + "_cart", JSON.stringify(store().CartStore.carts))
 }
 
 

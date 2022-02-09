@@ -7,11 +7,11 @@ const mainReducer = combineReducers({
     RefreshStore: Refresh
 })
 
-//const localstore = localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : [];
+const localstore = localStorage.getItem(localStorage.getItem("fname")+"_cart") ? JSON.parse(localStorage.getItem(localStorage.getItem("fname")+"_cart")) : [];
 
 const INITIAL_STAGE = {
     CartStore: {
-        carts: []
+        carts: localstore
     }
 }
 
