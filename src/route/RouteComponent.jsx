@@ -6,6 +6,7 @@ import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import Product from '../components/product/Product';
 import ProductList from '../components/product/ProductList';
+import Address from "../pages/order/Address";
 
 export default function RouteComponent() {
     return (
@@ -29,6 +30,9 @@ export default function RouteComponent() {
                     </Route>
                     <Route path="/product-list/:category" exact>
                         <ProductList />
+                    </Route>
+                    <Route path="/address" exact>
+                        <Address/>
                     </Route>
                 </Switch>
             </Router>

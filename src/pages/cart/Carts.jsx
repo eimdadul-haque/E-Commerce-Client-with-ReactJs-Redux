@@ -6,10 +6,12 @@ import Footer from "../../components/footer/Footer";
 import { Add, Remove } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Cart, removeCart } from "../../Redux/Actions/cartAction";
+import { useHistory } from "react-router-dom";
 
 export default function Carts() {
     const { carts } = useSelector(store => store.CartStore);
     const dispatch = useDispatch();
+    const history = useHistory();
     var Subtotal = 0;
 
     useEffect(() => {
@@ -28,6 +30,10 @@ export default function Carts() {
 
     const remove_cart = (product) => {
         dispatch(removeCart(product));
+    }
+
+    const address = () => {
+        history.push("/address");
     }
 
     return (
@@ -67,7 +73,7 @@ export default function Carts() {
                                                 </div>
                                                 <span className='cart-pro-price'>$ {data.price * data.qty}</span>
                                             </div>
-                                            <button onClick={()=>remove_cart(data)} className="remove-btn">Remove</button>
+                                            <button onClick={() => remove_cart(data)} className="remove-btn">Remove</button>
                                         </div>
                                         <hr />
                                     </>
@@ -93,7 +99,7 @@ export default function Carts() {
                             <span>Total</span>
                             <span>$ {Subtotal}</span>
                         </div>
-                        <button className='cart-summary-btn'>CHECKOUT NOW</button>
+                        <button onClick={() => address()} className='cart-summary-btn'>CHECKOUT NOW</button>
                     </div>
                 </div>
             </div>
