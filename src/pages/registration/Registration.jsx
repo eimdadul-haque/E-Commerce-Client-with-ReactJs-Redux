@@ -1,10 +1,13 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import Announcement from '../../components/announcement/Announcement';
 import "./Registration.css";
 
 export default function Registration() {
     return (
-        <>                <Navbar />
+        <>
+            <Announcement />
+            <Navbar />
             <div className='reg-container'>
 
                 <div className='reg-warpper'>

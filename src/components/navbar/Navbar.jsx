@@ -21,6 +21,10 @@ export default function Navbar() {
     const to_cart = () => {
         history.push('/cart/');
     }
+
+    const account = (route) => {
+            history.push("/"+route);
+    }
     return (
         <div className='container-nav'>
             <div className='wrapper'>
@@ -32,7 +36,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className='nav-part-mid'>
-                    <h2 className='logo'>OnlineShop</h2>
+                    <h2 onClick={()=>account("")} className='logo'>OnlineShop</h2>
                 </div>
                 <div className='nav-part-end'>
                     <div onClick={() => to_cart()} className='menu-item'>
@@ -40,11 +44,11 @@ export default function Navbar() {
                             <ShoppingCartOutlined />
                         </Badge>
                     </div>
-                    <div className='menu-item'>
-                        Register                          
+                    <div onClick={()=>account("registration")} className='menu-item'>
+                        Register
                     </div>
-                    <div className='menu-item'>
-                        Sign Up
+                    <div onClick={()=>account("login")} className='menu-item'>
+                        Sign In
                     </div>
                 </div>
             </div>

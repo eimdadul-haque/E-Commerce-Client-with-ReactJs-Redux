@@ -1,9 +1,13 @@
 import React from 'react';
+import Announcement from "../../components/announcement/Announcement";
+import Navbar from "../../components/navbar/Navbar";
 import "./Login.css";
 
 export default function Login() {
     return (
         <>
+            <Announcement />
+            <Navbar />
             <div className='log-container'>
                 <div className='log-warpper'>
                     <h1 className='log-title'>Create an Account</h1>

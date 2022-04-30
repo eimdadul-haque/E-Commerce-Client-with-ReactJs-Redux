@@ -10,9 +10,9 @@ import axios from 'axios';
 export default function Address() {
 
     const checkout = () => {
-        axios.get("http://localhost:7901/api/Checkout/")
-            .then(() => { })
-            .catch(() => { })
+        // axios.get("http://localhost:7901/api/Checkout/")
+        //     .then(() => { })
+        //     .catch(() => { })
     }
 
     return (
